@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PM Standards Comparison</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fa;
+      color: #2c3e50;
+    }
+    header {
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    nav button {
+      background: none;
+      border: none;
+      margin: 0 1rem;
+      padding: 1rem;
+      font-size: 1rem;
+      color: #34495e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    nav button:hover {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+    }
+    main {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 1.5rem;
+    }
+    .sidebar {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: 0.2s;
+    }
+    input[type="text"]:focus {
+      border-color: #3498db;
+      outline: none;
+      box-shadow: 0 0 6px rgba(52,152,219,0.4);
+    }
+    .comparison, .insights {
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: #f9fbfd;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .highlight {
+      background: #eaf6ff;
+      border-left: 4px solid #3498db;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+    }
+    #searchResults {
+      margin-top: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #3498db;
+      color: white;
+    }
+    td a {
+      display: inline-block;
+      margin-top: 4px;
+      color: #3498db;
+      text-decoration: none;
+    }
+    td a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Project Management Standards Comparison</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('library')">📚 Standards Library</button>
+    <button onclick="showSection('comparison')">⚖️ Comparison Engine</button>
+    <button onclick="showSection('insights')">📊 Insights Dashboard</button>
+  </nav>
+
+<!-- Add to your navigation -->
+<nav>
+    <button onclick="showSection('library')">📚 Standards Library</button>
+    <button onclick="showSection('comparison')">⚖️ Comparison Engine</button>
+    <button onclick="showSection('insights')">📊 Insights Dashboard</button>
+    <button onclick="showSection('process')">🔄 Process Generator</button> <!-- NEW -->
+</nav>
+
+<!-- Add this new section -->
+<section class="content" id="process" style="display:none;">
+  <h2>🔧 Process Generator</h2>
+  
+  <div class="card">
+    <h3>Project Scenario Input</h3>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+      <div>
+        <label><strong>Project Type:</strong></label>
+        <select id="projectType" class="form-select">
+          <option value="agile">Agile/Iterative</option>
+          <option value="waterfall">Waterfall/Predictive</option>
+          <option value="hybrid">Hybrid</option>
+          <option value="research">Research & Development</option>
+        </select>
+      </div>
+      
+      <div>
+        <label><strong>Project Size:</strong></label>
+        <select id="projectSize" class="form-select">
+          <option value="small">Small (< 3 months, < $100k)</option>
+          <option value="medium">Medium (3-12 months, $100k-$1M)</option>
+          <option value="large">Large (> 12 months, > $1M)</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+      <label><strong>Key Focus Areas:</strong></label>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <label><input type="checkbox" name="focus" value="risk"> Risk Management</label>
+        <label><input type="checkbox" name="focus" value="stakeholder"> Stakeholder Engagement</label>
+        <label><input type="checkbox" name="focus" value="quality"> Quality Assurance</label>
+        <label><input type="checkbox" name="focus" value="change"> Change Control</label>
+      </div>
+    </div>
+
+    <button onclick="generateProcess()" class="generate-btn">Generate Recommended Process</button>
+  </div>
+
+  <div id="processOutput"></div>
+</section>
+
+
+
+
+
+
+
+
+  <main>
+    <aside class="sidebar">
+      <h2>Search Standards</h2>
+      <input type="text" id="searchBox" placeholder="Search topics..." onkeyup="searchStandards()">
+      <div id="searchResults"></div>
+    </aside>
+
+    <section class="content" id="library">
+      <h2>Standards Library</h2>
+      <div class="card">📘 PMBOK 7th Edition: Guidance on performance domains, tailoring, and system principles.</div>
+      <div class="card">📙 PRINCE2: Structured methodology with principles, themes, and processes.</div>
+      <div class="card">📗 ISO 21500/21502: High-level project, program, and portfolio management guidelines.</div>
+    </section>
+
+    <section class="content" id="comparison" style="display:none;">
+      <h2>Comparison Engine</h2>
+      <div id="comparisonContainer"></div>
+    </section>
+
+    <section class="content" id="insights" style="display:none;">
+      <h2>Insights Dashboard</h2>
+      <div class="insights" id="insightsContainer"></div>
+    </section>
+  </main>
+
+  <script>
+  let standardsData = [];
+  let bookmarks = []; // store bookmarked topics
+
+  // Load standards JSON
+  fetch("standards.json")
+    .then(response => response.json())
+    .then(data => {
+      standardsData = data;
+      buildComparison();
+      buildInsights();
+      renderBookmarks();
+    })
+    .catch(error => console.error("Error loading JSON:", error));
+
+  function showSection(sectionId) {
+    document.querySelectorAll(".content").forEach(sec => sec.style.display = "none");
+    document.getElementById(sectionId).style.display = "block";
+  }
+
+  // Search functionality
+  function searchStandards() {
+    const input = document.getElementById("searchBox").value.toLowerCase();
+    const results = document.getElementById("searchResults");
+    results.innerHTML = "";
+
+    if (!input) return;
+
+    const matches = standardsData.filter(item =>
+      item.title.toLowerCase().includes(input) ||
+      (item.pmbok_description && item.pmbok_description.toLowerCase().includes(input)) ||
+      (item.prince2_description && item.prince2_description.toLowerCase().includes(input)) ||
+      (item.iso_description && item.iso_description.toLowerCase().includes(input))
+    );
+
+    if (matches.length) {
+      matches.forEach(match => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `
+          <strong>${match.title}</strong><br>
+          <b>PMBOK:</b> ${match.pmbok_description || "N/A"} <a href="${match.pmbok}" target="_blank">🔗 Link</a><br>
+          <b>PRINCE2:</b> ${match.prince2_description || "N/A"} <a href="${match.prince2}" target="_blank">🔗 Link</a><br>
+          <b>ISO:</b> ${match.iso_description || "N/A"} <a href="${match.iso}" target="_blank">🔗 Link</a><br>
+          <button onclick="addBookmark('${match.title}')">🔖 Bookmark</button>
+        `;
+        results.appendChild(div);
+      });
+    } else {
+      results.innerHTML = "<p>No matches found.</p>";
+    }
+  }
+
+  // Build comparison table (unchanged)
+  function buildComparison() {
+    const container = document.getElementById("comparisonContainer");
+    container.innerHTML = "";
+
+    if (!standardsData.length) return;
+
+    let tableHTML = `<table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>PMBOK 7</th>
+          <th>PRINCE2</th>
+          <th>ISO 21500/21502</th>
+          <th>Bookmark</th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+    standardsData.forEach(item => {
+      tableHTML += `
+        <tr>
+          <td>${item.title}</td>
+          <td>${item.pmbok_description || "N/A"}<br><a href="${item.pmbok}" target="_blank">🔗 Link</a></td>
+          <td>${item.prince2_description || "N/A"}<br><a href="${item.prince2}" target="_blank">🔗 Link</a></td>
+          <td>${item.iso_description || "N/A"}<br><a href="${item.iso}" target="_blank">🔗 Link</a></td>
+          <td><button onclick="addBookmark('${item.title}')">🔖 Bookmark</button></td>
+        </tr>
+      `;
+    });
+
+    tableHTML += `</tbody></table>`;
+    container.innerHTML = tableHTML;
+  }
+
+  function buildInsights() {
+    const container = document.getElementById("insightsContainer");
+    container.innerHTML = `
+      <div class="highlight">✅ Similarities: All three emphasize risk, stakeholder, and governance.</div>
+      <div class="highlight">⚡ Differences: PRINCE2 is process-heavy, PMBOK is principle-driven, ISO is high-level guidance.</div>
+      <div class="highlight">🌟 Unique: PRINCE2 has themes and roles, PMBOK focuses on value delivery, ISO links project/program/portfolio management.</div>
+    `;
+  }
+
+  // Add bookmark
+  function addBookmark(topic) {
+    if (!bookmarks.includes(topic)) {
+      bookmarks.push(topic);
+      renderBookmarks();
+      alert(`Bookmarked: ${topic}`);
+    }
+  }
+
+  // Render bookmarks in the sidebar
+  function renderBookmarks() {
+    let sidebar = document.querySelector(".sidebar");
+    let existing = document.getElementById("bookmarkList");
+    if (!existing) {
+      const div = document.createElement("div");
+      div.id = "bookmarkList";
+      div.innerHTML = `<h3>Bookmarks</h3><ul id="bookmarkItems"></ul>`;
+      sidebar.appendChild(div);
+    }
+    const ul = document.getElementById("bookmarkItems");
+    ul.innerHTML = bookmarks.map(b => `<li>${b}</li>`).join("");
+  }
+</script>
+
+</body>
+</html>

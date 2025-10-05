@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Risk Management",
+    "pmbok": "PMBOK-2021-7th-Edition.pdf#page=12",
+    "prince2": "https://www.peoplecert.org/browse-certifications/change-risk-and-benefits-management/M_o_R-3",
+    "iso": "ISO_21500.pdf#page=21",
+    "pmbok_description": "Focuses on uncertainty management and continuous assessment.",
+    "prince2_description": "Emphasizes risk registers and proactive responses.",
+    "iso_description": "Provides general guidelines for identifying and treating risks."
+  },
+  {
+    "title": "Stakeholder Engagement",
+    "pmbok": "PMBOK-2021-7th-Edition.pdf#page=30",
+    "prince2": "https://www.axelos.com/best-practice-solutions/prince2/what-is-prince2#stakeholders",
+    "iso": "ISO_21500.pdf#page=8",
+    "pmbok_description": "Continuous collaboration and communication plans.",
+    "prince2_description": "Roles defined in governance structure (executive, users, suppliers).",
+    "iso_description": "Broad engagement practices but less detailed than PMBOK."
+  },
+  {
+    "title": "Tailoring / Adaptability",
+    "pmbok": "PMBOK-2021-7th-Edition.pdf#page=131",
+    "prince2": "https://www.axelos.com/best-practice-solutions/prince2/what-is-prince2#tailoring",
+    "iso": "ISO_21500.pdf#page=15",
+    "pmbok_description": "Strong focus on tailoring practices to suit project context.",
+    "prince2_description": "Provides explicit tailoring guidance in its 7 principles.",
+    "iso_description": "Offers general adaptability recommendations but no deep detail."
+  },
+  {
+    "title": "Governance",
+    "pmbok": "PMBOK-2021-7th-Edition.pdf#page=12",
+    "prince2": "https://www.axelos.com/best-practice-solutions/prince2/what-is-prince2#governance",
+    "iso": "ISO_21500.pdf#page=6",
+    "pmbok_description": "Governance is embedded in project value delivery and principles.",
+    "prince2_description": "Clear governance roles (Executive, Project Board, Project Manager).",
+    "iso_description": "High-level governance integration across project, program, portfolio."
+  },
+  {
+    "title": "Performance Domains",
+    "pmbok": "PMBOK-2021-7th-Edition.pdf#page=7",
+    "prince2": "https://www.axelos.com/best-practice-solutions/prince2/what-is-prince2#themes",
+    "iso": "ISO_21500.pdf#page=8",
+    "pmbok_description": "Introduces 8 performance domains (stakeholders, team, lifecycle, planning, uncertainty, delivery, measurement, governance).",
+    "prince2_description": "Focuses on 7 themes and processes, not domains.",
+    "iso_description": "General framework without domain breakdown."
+  }
+]
